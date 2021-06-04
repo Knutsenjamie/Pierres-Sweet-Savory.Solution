@@ -63,7 +63,7 @@ namespace SweetSavory
       
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Error!");
+        await context.Response.WriteAsync("Sorry! You must login and register an account to see this page :)!");
       });
     }
   }

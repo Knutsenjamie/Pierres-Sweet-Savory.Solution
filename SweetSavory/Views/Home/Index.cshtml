@@ -4,11 +4,36 @@
 
 @using SweetSavory.Models;
 
-<h1>🥐🥖🍰 Welcome to Pierre's Bakery! 🥐🥖🍰</h1>
+<div class="container">
+    <div class="jumbotron">
+  <h1>🥐🥖🍰 Welcome to Pierre's Bakery! 🥐🥖🍰</h1>
+  </div>
+</div>
 <br>
-<h4>Hello! If you're new here, feel free to take a sneak peak at all of the treats and flavors we offer. If you'd like to add/suggest some new flavors or treats, register and login to sign-up!</h4>
-<br>
-<p>@Html.ActionLink("See all of our treats -or- suggest some new ones!", "Index", "Treats")</p>
-<p>@Html.ActionLink("See all of our flavors -or- suggest some new ones!", "Index", "Flavors")</p>
-<p>@Html.ActionLink("Register here", "Register", "Account")</p>
-<p>@Html.ActionLink("Log in", "Login", "Account")</p>
+<div class="card">
+  <div class="card-body">
+    <br>
+    <h4>Hello! If you're new here, feel free to take a sneak peak at all of the treats and flavors we offer. If you'd like to add/suggest some new flavors or treats, register and login to sign-up!</h4>
+    <br>
+
+    <h4>Here are some of our various flavors:</h4>
+
+    @foreach (Flavor flavor in Model["Flavors"])
+    {
+      <li class="blocktext">@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</li>
+    }
+    <br>
+    <h4>Here are some of the treats we offer!:</h4>
+
+    @foreach (Treat treat in Model["Treats"])
+    {
+      <li class="blocktext">@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId})</li>
+    }
+    <br>
+
+    <p>@Html.ActionLink("See all of our treats -or- suggest some new ones!", "Index", "Treats")</p>
+    <p>@Html.ActionLink("See all of our flavors -or- suggest some new ones!", "Index", "Flavors")</p>
+    <p>@Html.ActionLink("Register here", "Register", "Account")</p>
+    <p>@Html.ActionLink("Log in", "Login", "Account")</p>
+  </div>
+</div>

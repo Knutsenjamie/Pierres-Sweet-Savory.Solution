@@ -1,0 +1,22 @@
+body
+{
+    background-image: url(https://cdn.pixabay.com/photo/2016/11/29/08/24/bakery-1868396_1280.jpg);
+    background-size: cover;
+}
+
+:is(h1, h2, h3, h4, h5, h6) 
+{
+    color: rgb(0, 0, 0);
+}
+
+.card 
+{
+    background-color: rgb(223, 223, 223);
+    opacity: 0.7;
+    text-align: center;
+}
+
+.jumbotron
+{
+    opacity: 0.7;
+}
