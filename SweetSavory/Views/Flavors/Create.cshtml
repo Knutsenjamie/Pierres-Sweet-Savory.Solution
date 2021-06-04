@@ -4,16 +4,11 @@
 
 @model SweetSavory.Models.Flavor
 
-<h4>Add/suggest a new flavor!</h4>
-
+<h4>Add/suggest a new flavor</h4>
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name, new {@class = "form-control", type="text", required="text"})
-
-  @Html.Label("Select a treat you would like to see in this flavor")
-  @Html.DropDownList("TreatId")
-
-  <input type="submit" value="Add new flavor" class="btn btn-primary" />
+  @Html.TextBoxFor(model => model.Name)
+  <input type="submit" value="Add new flavor" />
 }
-<p>@Html.ActionLink("Show all flavors", "Index")</p>
+<p>@Html.ActionLink("Show all categories", "Index")</p>
