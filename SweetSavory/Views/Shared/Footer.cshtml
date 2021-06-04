@@ -1,17 +1,19 @@
 @if (User.Identity.IsAuthenticated)
 {
     <div id="footer">
-        @Html.ActionLink("Homepage", "Index", "Home")
+        <br>
+        <button class="btn btn-light">@Html.ActionLink("Homepage", "Index", "Home")</button>
 
         @using (Html.BeginForm("LogOff", "Account"))
             {
-            <input type="submit" class="btn btn-default" value="Log out" />
+            <input type="submit" class="btn btn-info" value="Log out" />
             }
     </div>
 }
 else if (User.Identity.IsAuthenticated == false)
 {
+    <br>
     <div id="footer">
-        @Html.ActionLink("Homepage", "Index", "Home")
+       <button class="btn btn-light">@Html.ActionLink("Homepage", "Index", "Home")</button>
     </div>
 }
