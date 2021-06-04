@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SweetSavory.Models.Flavor
+
+<h2>Flavor Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if (@Model.JoinIR.Count == 0)
+{
+  <p>This flavor does not belong to any treats yet!</p>
+}
+else
+{
+  <h4>Here are some treats that this flavor belongs to:</h4>
+  <ul>
+    @foreach (var join in Model.JoinIR)
+    {
+      <li>@join.Treat.Name</li>
+      @using (Html.BeginForm("DeleteFlavor", "Flavors"))
+      {
+        @Html.Hidden("joinId", @join.FlavorTreatId)
+        <input type="submit" value="Delete" />
+      }
+    }
+  </ul>
+}
