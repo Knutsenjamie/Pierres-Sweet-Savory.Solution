@@ -4,15 +4,19 @@
 
 @model SweetSavory.Models.Treat
 
-<h4>Add/suggest a new treat!</h4>
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name, new {@class = "form-control", type="text", required="text"} )
+<div class="card">
+  <div class="card-body">
+    <h4>Add/suggest a new treat!</h4>
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name, new {@class = "form-control", type="text", required="text"} )
 
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description, new {@class = "form-control", type="text", required="text"})
+      @Html.LabelFor(model => model.Description)
+      @Html.TextBoxFor(model => model.Description, new {@class = "form-control", type="text", required="text"})
 
-  <input type="submit" value="Add a treat!" />
-}
-<p>@Html.ActionLink("Show all treats", "Index")</p>
+      <input type="submit" value="Add a treat!" />
+    }
+    <p>@Html.ActionLink("Show all treats", "Index")</p>
+  </div>
+</div>

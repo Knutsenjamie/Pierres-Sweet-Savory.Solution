@@ -5,21 +5,25 @@
 @using SweetSavory.Models;
 @model IEnumerable<SweetSavory.Models.Flavor>;
 
-<h1>Flavors</h1>
+<div class="card">
+  <div class="card-body">
+    <h1>Flavors</h1>
 
-@if (Model.Any())
-{
-  <ul>
-  @foreach (Flavor flavor in Model)
+    @if (Model.Any())
     {
-      <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
+      <ul>
+      @foreach (Flavor flavor in Model)
+        {
+          <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
+        }
+      </ul>
     }
-  </ul>
-}
-else
-{
-  <h3>No flavors have been added yet!</h3>
-}
+    else
+    {
+      <h3>No flavors have been added yet!</h3>
+    }
 
-<p>@Html.ActionLink("Add a new/suggested flavor", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+    <p>@Html.ActionLink("Add a new/suggested flavor", "Create")</p>
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  </div>
+</div>

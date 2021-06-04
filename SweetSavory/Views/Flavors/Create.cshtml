@@ -4,11 +4,15 @@
 
 @model SweetSavory.Models.Flavor
 
-<h4>Add/suggest a new flavor</h4>
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  <input type="submit" value="Add new flavor" />
-}
-<p>@Html.ActionLink("Show all categories", "Index")</p>
+<div class="card">
+  <div class="card-body">
+    <h4>Add/suggest a new flavor</h4>
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name)
+      <input type="submit" value="Add new flavor" />
+    }
+    <p>@Html.ActionLink("Show all categories", "Index")</p>
+  </div>
+<div>
